@@ -11,6 +11,7 @@ import { SupabaseService } from '../api/supabase.service';
 export class CreateInvoiceComponent implements OnInit {
   private _clientId: number = 0; 
   invoiceForm!: FormGroup;
+  submitted = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class CreateInvoiceComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     if (this.invoiceForm.invalid) {
       return;
     }

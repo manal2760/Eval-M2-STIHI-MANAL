@@ -6,6 +6,9 @@
       <div class="form-group">
         <label for="amount" class="label">Montant</label>
         <input type="number" formControlName="amount" id="amount" class="input" name="amount">
+        <div *ngIf="submitted && invoiceForm.get('amount')!.errors?.['required'] ?? false" class="error-message">
+          Le montant est requis.
+        </div>   
       </div>
       <div class="form-group">
         <label for="status" class="label">Statut</label>
@@ -13,6 +16,9 @@
           <option value="PAID">Payé</option>
           <option value="SENT">Envoyé</option>
         </select>
+        <div *ngIf="submitted && invoiceForm.get('status')!.errors?.['required'] ?? false" class="error-message">
+          Le statut est requis.
+        </div>  
       </div>
       <button type="submit" class="btn">Enregistrer la facture</button>
     </form>

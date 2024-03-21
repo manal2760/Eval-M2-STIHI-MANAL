@@ -10,6 +10,7 @@ import { SupabaseService } from '../api/supabase.service';
 })
 export class CreateClientComponent implements OnInit {
   clientForm!: FormGroup;
+  submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,7 +26,8 @@ export class CreateClientComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.clientForm) { // Check if clientForm is defined
+    this.submitted = true;
+    if (!this.clientForm) {
       return;
     }
 

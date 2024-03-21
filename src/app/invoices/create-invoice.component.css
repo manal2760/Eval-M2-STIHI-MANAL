@@ -53,3 +53,9 @@
   h2{
     margin-top: 60px;
   }
+
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
