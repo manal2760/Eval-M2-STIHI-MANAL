@@ -1,0 +1,19 @@
+<div class="action-button">
+  <h2 class="title">Liste des clients</h2>
+  <a routerLink="/create" class="btn">Créer un client</a>
+</div>
+<div class="client-container">
+  <div *ngIf="clients && clients.length > 0" class="client-list">
+    <ul>
+      <li *ngFor="let client of clients" class="client-item">
+        <a [routerLink]="['/', client.id]" class="client-link">
+          <strong class="client-name">{{ client.fullname }}</strong> - <span class="client-email">{{ client.email }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!clients || clients.length === 0" class="no-clients">
+    <p class="no-clients-text">Aucun client trouvé.</p>
+  </div>
+</div>

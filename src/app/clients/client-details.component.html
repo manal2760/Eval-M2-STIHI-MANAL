@@ -1,0 +1,35 @@
+<h2 class="title">Détails du client</h2>
+<div class="container">
+  <div class="form-container">
+  <div *ngIf="client">
+    <p><strong>Nom:</strong> {{ client.fullname }}</p>
+    <p><strong>Email:</strong> {{ client.email }}</p>
+    <div class="action-button">
+      <a [routerLink]="['/', client.id, 'invoices', 'add']" class="btn">Créer une facture</a>
+  </div>
+  </div>
+  
+  <div *ngIf="invoices && invoices.length > 0" class="invoice-details">
+    <h3>Factures</h3>
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>Montant</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices">
+          <td>{{ invoice.amount }}</td>
+          <td>{{ invoice.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="action-button">
+    <a [routerLink]="['']" class="btn">Retour aux clients</a> 
+  </div>
+  
+</div>
+</div>

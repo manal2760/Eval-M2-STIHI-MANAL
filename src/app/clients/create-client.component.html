@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="title">Créer un client</h2>
+
+  <div class="form-container">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="fullName" class="label">Nom complet</label>
+        <input type="text" formControlName="fullname" id="fullName" class="input" name="fullName">
+      </div>
+      <div class="form-group">
+        <label for="email" class="label">Email</label>
+        <input type="email" formControlName="email" id="email" class="input" name="email">
+      </div>
+      <button type="submit" class="btn">Enregistrer</button>
+    </form>
+  </div>
+</div>

@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
